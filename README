@@ -29,3 +29,5 @@ Do:
  $ jhbuild shell
  $ export PYTHONPATH=/opt/gnome/lib/python3.3/site-packages:/opt/gnome/lib64/python3.3/site-packages
  $ gnome-music
+
+Join the chat at https://gitter.im/vrutkovs/gnome-music
