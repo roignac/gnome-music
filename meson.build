@@ -61,3 +61,5 @@ install_subdir('gnomemusic', install_dir: python_dir)
 message('Preparing init file')
 configure_file(input : 'gnome-music.in', output : 'gnome-music', configuration : conf)
 install_data('gnome-music', install_dir: 'bin')
+
+meson.set_install_script('meson_install.sh')

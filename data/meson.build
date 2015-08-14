@@ -11,6 +11,9 @@ message('TODO: Compiling resources')
 
 message('Compiling schemas')
 gnome.compile_schemas()
+install_data(
+    'org.gnome.Music.gschema.xml',
+    install_dir : 'share/glib-2.0/schemas')
 
 message('TODO: Making a .desktop file')
 
@@ -30,4 +33,5 @@ foreach theme : icon_themes
         icon_names = icon_names + ['icons/' + theme + '/' + size + 'x' + size + '/apps/gnome-music.png']
     endforeach
 endforeach
-icon_names = icon_names + ['icons/gnome-music.svg']
+icon_names = icon_names + ['icons/hicolor/gnome-music.svg']
+install_data(icon_names, install_dir : 'share')
