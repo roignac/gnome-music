@@ -16,3 +16,9 @@ libmediaart = dependency('libmediaart-2.0')
 grilo = dependency('grilo-0.2', version : '>=0.2.6')
 
 subdir('data')
+
+gnome = import('gnome')
+myres = gnome.compile_resources(
+    'gnome-music', 'data/gnome-music.gresource.xml',
+    source_dir : 'data',
+    c_name : 'gnome-music')
