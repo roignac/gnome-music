@@ -16,4 +16,5 @@ libmediaart = dependency('libmediaart-2.0')
 grilo = dependency('grilo-0.2', version : '>=0.2.6')
 
 subdir('data')
+subdir('po')
 subdir('help')
