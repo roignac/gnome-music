@@ -54,7 +54,7 @@ gnome.generate_gir(
     install : true
 )
 
-message('Generate authors list')
+message('TODO: Generate authors list')
 
 install_subdir('gnomemusic', install_dir: python_dir)
 

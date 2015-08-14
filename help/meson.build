@@ -1,4 +1,4 @@
-message('Prepare help files')
+message('TODO: Prepare help files')
 help_files = [
     'introduction.page',
     'index.page',
