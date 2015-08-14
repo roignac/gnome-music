@@ -15,4 +15,4 @@ gtkdep = dependency('gtk+-3.0', version : '>=3.13.2')
 libmediaart = dependency('libmediaart-2.0')
 grilo = dependency('grilo-0.2', version : '>=0.2.6')
 
-gnome = import('gnome')
+subdir('data')
