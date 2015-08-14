@@ -1,10 +1,12 @@
 gnome = import('gnome')
 
 message('Compiling resources')
-myres = gnome.compile_resources(
-    'gnome-music', 'gnome-music.gresource.xml',
-    source_dir : '.',
-    c_name : 'gnome-music')
+# gnome.compile_resources(
+#     'gnome-music', 'gnome-music.gresource.xml',
+#     source_dir : '.',
+#     c_name : 'gnome-music',
+#     install_dir : python_dir,
+#     install: true)
 
 
 message('Compiling schemas')
@@ -14,7 +16,8 @@ message('Making a .desktop file')
 
 message('Preparing appdata')
 
-message('Compiling a man page')
+message('Install a man page')
+install_man('gnome-music.1')
 
 message('Making a list of icons')
 icon_names = []

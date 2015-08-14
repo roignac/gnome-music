@@ -18,6 +18,13 @@ gtk = dependency('gtk+-3.0', version : '>=3.13.2')
 libmediaart = dependency('libmediaart-2.0')
 grilo = dependency('grilo-0.2', version : '>=0.2.6')
 
+message('Getting python install dir')
+r = run_command(py3, '-c', 'from distutils.sysconfig import get_python_lib; print(get_python_lib())')
+if r.returncode() != 0
+    error('Cannot find python install dir')
+endif
+python_dir = r.stdout().strip()
+
 subdir('data')
 subdir('po')
 subdir('help')
@@ -46,3 +53,11 @@ gnome.generate_gir(
     includes : ['GObject-2.0', 'Gio-2.0', 'Gtk-3.0'],
     install : true
 )
+
+message('Generate authors list')
+
+install_subdir('gnomemusic', install_dir: python_dir)
+
+message('Preparing init file')
+configure_file(input : 'gnome-music.in', output : 'gnome-music', configuration : conf)
+install_data('gnome-music', install_dir: 'bin')
