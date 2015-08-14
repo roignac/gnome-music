@@ -1,13 +1,22 @@
 gnome = import('gnome')
 
-# Compile schemas
+message('Compiling resources')
+myres = gnome.compile_resources(
+    'gnome-music', 'gnome-music.gresource.xml',
+    source_dir : '.',
+    c_name : 'gnome-music')
+
+
+message('Compiling schemas')
 gnome.compile_schemas()
 
-# Desktop file
-# Appdata
-# Man page
+message('Making a .desktop file')
 
-# Make a list of icons
+message('Preparing appdata')
+
+message('Compiling a man page')
+
+message('Making a list of icons')
 icon_names = []
 
 icon_themes = ['hicolor', 'HighContrast']
