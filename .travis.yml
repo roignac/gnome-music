@@ -15,8 +15,8 @@ matrix:
 before_install:
 - openssl aes-256-cbc -K $encrypted_82d618340c6b_key -iv $encrypted_82d618340c6b_iv
   -in copr.enc -out copr -d
-- openssl aes-256-cbc -K $encrypted_82d618340c6b_key -iv $encrypted_82d618340c6b_iv
-  -in id_rsa.enc -out id_rsa -d
+#- openssl aes-256-cbc -K $encrypted_82d618340c6b_key -iv $encrypted_82d618340c6b_iv
+#  -in id_rsa.enc -out id_rsa -d
 script:
 - docker run -e "PR=$TRAVIS_PULL_REQUEST" -itv $(pwd):/mnt --rm fedora:rawhide "/bin/sh"
   "/mnt/ci_$TEST.sh"
