@@ -27,4 +27,5 @@ URL="http://chaturan.ga:8000/$SRPM"
 echo "Pushing $URL to COPR"
 mkdir -p ~/.config
 cp /mnt/copr ~/.config
-curl -L https://copr.fedoraproject.org/api/coprs/vrutkovs
+dnf install -y -q copr-cli
+copr-cli build gnome-music-nightly $URL
