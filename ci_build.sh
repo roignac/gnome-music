@@ -4,11 +4,11 @@ set -x
 cd /mnt
 
 # Dependencies
-dnf install -y python3 gobject-introspection-devel gtk3-devel \
-               libmediaart-devel grilo-devel
+dnf install -q -y python3 gobject-introspection-devel gtk3-devel \
+                  libmediaart-devel grilo-devel
 
 # Other boring stuff
-dnf install -y gnome-common make which intltool git xz
+dnf install -q -y gnome-common make which intltool git xz
 
 git submodule update --init
 ./autogen.sh
