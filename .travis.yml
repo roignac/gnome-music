@@ -12,3 +12,4 @@ matrix:
 
 script:
 - docker run -e "PR=$TRAVIS_PULL_REQUEST" -itv $(pwd):/mnt --rm fedora:rawhide "/bin/sh" "/mnt/ci_$TEST.sh"
+- ls -la .
