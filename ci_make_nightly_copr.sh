@@ -28,4 +28,4 @@ echo "Pushing $URL to COPR"
 mkdir -p ~/.config
 cp /mnt/copr ~/.config
 dnf install -y -q copr-cli
-copr-cli build gnome-music-unstable $URL
+copr-cli build gnome-music-unstable $URL --nowait
