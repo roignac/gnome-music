@@ -20,7 +20,7 @@ echo "Got SRPM: $SRPM"
 mkdir -p ~/.ssh
 cp /mnt/id_rsa ~/.ssh
 chmod 600 ~/.ssh/id_rsa
-scp $SRPM vrutkovs@chaturan.ga:~/srpms
+scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $SRPM vrutkovs@chaturan.ga:~/srpms
 URL="http://chaturan.ga:8000/$SRPM"
 
 echo "Pushing $URL to COPR"

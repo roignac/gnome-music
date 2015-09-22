@@ -29,7 +29,7 @@ else
         mkdir -p ~/.ssh
         cp /mnt/id_rsa ~/.ssh
         chmod 600 ~/.ssh/id_rsa
-        scp $FILENAME vrutkovsky@master.gnome.org:~
+        scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $FILENAME vrutkovsky@master.gnome.org:~
     else
         echo "Building a nightly SRPM and uploading to copr"
         sh ci_make_nightly_copr.sh || true  # don't fail the build if nightly cannot be submitted
