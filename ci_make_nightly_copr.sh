@@ -25,3 +25,6 @@ scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ./$SRPM vrutkovs
 URL="http://chaturan.ga:8000/$SRPM"
 
 echo "Pushing $URL to COPR"
+mkdir -p ~/.config
+cp /mnt/copr ~/.config
+curl -L https://copr.fedoraproject.org/api/coprs/vrutkovs
