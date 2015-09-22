@@ -13,14 +13,14 @@ dnf install -q -y gnome-common make which intltool git xz rpm-build
 git submodule update --init
 ./autogen.sh
 
-if [ "$PR" -ne "false" ]; then
+if [ "$PR" == "false" ]; then
     make
 else
     echo "Not a PR, making a new nightly release in COPR"
     make distcheck
 
     RELEASE=$(git describe --exact-match HEAD)
-    if [ -z "$RELEASE" ]; then
+    if [ -n "$RELEASE" ]; then
         echo "Uploading new release $RELEASE to master.gnome.org"
         make distcheck
         FILENAME=gnome-music-$RELEASE.tar.xz
