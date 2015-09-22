@@ -8,7 +8,7 @@ dnf install -q -y python3 gobject-introspection-devel gtk3-devel \
                   libmediaart-devel grilo-devel
 
 # Other boring stuff
-dnf install -q -y gnome-common make which intltool git xz
+dnf install -q -y gnome-common make which intltool git xz rpm-build
 
 git submodule update --init
 ./autogen.sh
