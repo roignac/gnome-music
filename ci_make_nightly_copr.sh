@@ -12,5 +12,15 @@ cd gnome-music
 sed -i "s,Version:.*,Version: $VERSION," gnome-music.spec
 sed -i "s,Release:.*,Release: $RELEASE%{?dist}," gnome-music.spec
 rpmbuild -bs gnome-music.spec
-ls -la /root/rpmbuild/SRPMS/*.src.rpm
-mv /root/rpmbuild/SRPMS/* /mnt
+SRPM=`ls /root/rpmbuild/SRPMS/*.src.rpm`
+echo "Got SRPM: $SRPM"
+
+
+# Upload to my host
+mkdir -p ~/.ssh
+cp /mnt/id_rsa ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+scp $SRPM vrutkovs@chaturan.ga:~/srpms
+URL="http://chaturan.ga:8000/$SRPM"
+
+echo "Pushing $URL to COPR"
