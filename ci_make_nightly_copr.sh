@@ -13,4 +13,4 @@ sed -i "s,Version:.*,Version: $VERSION," gnome-music.spec
 sed -i "s,Release:.*,Release: $RELEASE%{?dist}," gnome-music.spec
 rpmbuild -bs gnome-music.spec
 ls -la /root/rpmbuild/SRPMS/*.src.rpm
-# TODO: copy srpm to a public space and start copr build
+mv /root/rpmbuild/SRPMS/* /mnt
