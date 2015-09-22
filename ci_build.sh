@@ -13,7 +13,7 @@ dnf install -q -y gnome-common make which intltool git xz rpm-build
 git submodule update --init
 ./autogen.sh
 
-if [ "$PR" == "false" ]; then
+if [ "$PR" != "false" ]; then
     make
 else
     echo "Not a PR, making a new nightly release in COPR"
