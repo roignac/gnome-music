@@ -1,5 +1,5 @@
 #/bin/sh
-export VERSION=$(git describe --abbrev=0 --tags)
+export VERSION=$(ls gnome-music*.tar.xz | cut -d '-' -f 3 | sed s/.tar.xz//)
 export RELEASE="$(date +"%Y%m%d")git$(git rev-parse --short=8 HEAD)"
 echo "Making a fedora copr build"
 echo "VERSION=$VERSION"
